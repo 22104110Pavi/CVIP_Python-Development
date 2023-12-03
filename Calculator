@@ -1,0 +1,41 @@
+print("Welcome User\nPlease select the Arithmetic Operation you need to perform ")
+print("1.Addition")
+print("2.Subraction ")
+print("3.Multiplication")
+print("4.Division")
+print("5.Square root")
+print("6.Square")
+n=int(input("Select an option from 1 to 6: "))
+if n<=0 or n>6:
+  print("Enter a valid Option")
+elif n==1:
+  print("You Have selected Addition")
+  a=int(input("Enter the First number:"))
+  b=int(input("Enter the Second number:"))
+  print("The result is ",a+b)
+elif n==2:
+  print("You Have selected Subraction")
+  a=int(input("Enter the First number:"))
+  b=int(input("Enter the Second number:"))
+  print("The result is ",a-b)
+elif n==3:
+  print("You Have selected Multiplication")
+  a=int(input("Enter the First number:"))
+  b=int(input("Enter the Second number:"))
+  print("The result is ",a*b)
+elif n==4:
+  print("You Have selected Division")
+  a=int(input("Enter the First number:"))
+  b=int(input("Enter the Second number:"))
+  if b == 0:
+    print("Error: Division by zero")
+  else:
+    print("The result is ", a / b)
+elif n==5:
+  print("You Have selected Square Root")
+  a=int(input("Enter the number:"))
+  print("The result is ", a ** 0.5)
+elif n==6:
+  print("You Have selected Squaring of number")
+  a=int(input("Enter the number:"))
+  print("The result is ", a ** 2)
