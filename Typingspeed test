@@ -1,0 +1,38 @@
+import random
+import time
+
+def generate_random_text():
+    words = "Be the change that you wish to see in the world.".split()
+    return ' '.join(random.choice(words) for _ in range(10))
+
+def calculate_accuracy(original_text, user_input):
+    ow = original_text.split()
+    user_words = user_input.split()
+
+    correct_count = sum(1 for u, o in zip(user_words, ow) if u == o)
+    accuracy = (correct_count / len(ow)) * 100
+    return round(accuracy, 2)
+
+def typing_speed_test():
+    print("Welcome to Typing Speed Tester!")
+    print("This program will test your typing speed.All you needed to do is type the following text and press Enter ")
+    input("Press Enter to start...")
+
+    original_text = generate_random_text()
+    print("\nType the following:")
+    print(original_text)
+
+    start_time = time.time()
+    user_input = input("\nStart typing here: ")
+    end_time = time.time()
+
+    accuracy = calculate_accuracy(original_text, user_input)
+    time_taken = round(end_time - start_time, 2)
+    words_per_minute = round((len(user_input.split()) / time_taken) * 60)
+
+    print(f"\nTime taken: {time_taken} seconds")
+    print(f"Your typing speed: {words_per_minute} words per minute")
+    print(f"Accuracy: {accuracy}%")
+
+if __name__ == "__main__":
+    typing_speed_test()
